@@ -5,4 +5,5 @@ startTime=$(date+%s)
 sleep 10
 endTime=$(date+%s)
 
-totalTime=$((startTime-endTIme))
+totalTime=$((startTime-endTime))
+echo "total time is: $totalTime"
