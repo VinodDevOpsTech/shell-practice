@@ -14,6 +14,7 @@ dnf install mysqlfghj -y
 
 if [ $? -ne 0 ]; then
     echo "installing mySQL....FAILED"
+    exit 1
 
 else
     echo "installing mySQL....."    
