@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #conditions
-NUM=$10
+NUM=$1
 
 if [$NUM -gt 20]; then
 
