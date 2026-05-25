@@ -23,8 +23,8 @@ do
     dnf list installed $pack &>> $LOG_FILE
     if [ $? -ne 0 ]; then
         dnf install $pack -y &>> $LOG_FILE
-        FUNCTION "installing $pack" $?
+        FUNCTION pack $?
     else
         echo " $pack is already installed.... SKIPPING!!!"
-    fi    
-done        
+    fi
+done
