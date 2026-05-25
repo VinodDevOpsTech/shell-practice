@@ -9,6 +9,16 @@ else
     echo "USER:"
 fi
 
+FUNCTION(){
+    if [ $? -ne 0 ]; then
+        echo "installing $1....FAILED"
+        exit 1
+
+    else
+        echo "installing $1....SUCCESS!!!"
+    fi
+}
+
 dnf list installed mysql -y
 if [ $? -eq 0 ]; then
     echo "mySQL is already installed.... SKIPPING"
@@ -16,12 +26,6 @@ if [ $? -eq 0 ]; then
 else    
     echo "installing mySQL"
     dnf install mysql -y
-
-    if [ $? -ne 0 ]; then
-        echo "installing mySQL....FAILED"
-        exit 1
-
-    else
-        echo "installing mySQL....SUCCESS!!!"
-    fi
+    FUNCTION MySQL $?
+    
 fi    
