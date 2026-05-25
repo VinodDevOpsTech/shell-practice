@@ -6,5 +6,14 @@ if [ $USERID -ne 0 ]; then
     echo "ERROR: please run this in root user"
     exit 1
 else
-    echo "run this in root user"
+    echo "USER:"
 fi
+
+echo "installing mySQL"
+dnf install mysqlfghj -y
+
+if [ $? -ne 0 ]; then
+    echo "installing mySQL....FAILED"
+
+else
+    echo "installing mySQL....."    
