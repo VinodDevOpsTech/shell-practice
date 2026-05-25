@@ -3,7 +3,7 @@
 #conditions
 NUM=$1
 
-if [$NUM -gt 20]; then
+if [ $NUM -gt 20 ]; then
 
     echo "given number is greater then 20"
 else
