@@ -9,13 +9,19 @@ else
     echo "USER:"
 fi
 
-echo "installing mySQL"
-dnf install mysql -y
-
-if [ $? -ne 0 ]; then
-    echo "installing mySQL....FAILED"
+dnf list installed mysql -y
+if [ $? -eq 0 ]; then
+    echo "mySQL is already installed.... SKIPPING"
     exit 1
+else    
+    echo "installing mySQL"
+    dnf install mysql -y
 
-else
-    echo "installing mySQL....SUCCESS!!!"
-fi
+    if [ $? -ne 0 ]; then
+        echo "installing mySQL....FAILED"
+        exit 1
+
+    else
+        echo "installing mySQL....SUCCESS!!!"
+    fi
+fi    
