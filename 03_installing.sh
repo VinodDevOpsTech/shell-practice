@@ -17,5 +17,5 @@ if [ $? -ne 0 ]; then
     exit 1
 
 else
-    echo "installing mySQL....."
+    echo "installing mySQL....SUCCESS!!!"
 fi
