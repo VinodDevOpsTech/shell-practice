@@ -2,7 +2,7 @@ USERID=$(id -u)
 
 LOG_DIR=/var/log/shell-script
 LOG_FILE=$LOG_DIR/$(basename $0).log
-TIMESTAMP=$(date "+%Y-%m-%D %H:%M:%S")
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR: please run this in root user"
