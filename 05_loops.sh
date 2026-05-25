@@ -2,6 +2,7 @@ USERID=$(id -u)
 
 LOG_DIR=/var/log/shell-script
 LOG_FILE=$LOG_DIR/$(basename $0).log
+TIMESTAMP=$(date "+%Y-%m-%D %H:%M:%S)
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR: please run this in root user"
@@ -10,10 +11,10 @@ fi
 
 FUNCTION(){
     if [ $2 -ne 0 ]; then
-        echo "installing $2....FAILED"
+        echo "$TIMESTAMP [ERROR] installing $2....FAILED" | tee -a $LOG_FILE
         exit 1
     else
-        echo "installing $2....SUCCESS!!!"
+        echo "$TIMESTAMP [INFO] installing $2....SUCCESS!!!" | tee -a $LOG_FILE
     fi
 }
 
