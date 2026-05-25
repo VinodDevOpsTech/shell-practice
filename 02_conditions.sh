@@ -8,3 +8,4 @@ if [ $NUM -gt 20 ]; then
 else
     echo "given number is less than or equal to 20"
 fi
+echo "hello world"
