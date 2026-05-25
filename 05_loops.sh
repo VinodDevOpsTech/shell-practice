@@ -14,7 +14,7 @@ FUNCTION(){
         echo "$TIMESTAMP [ERROR] installing $2....FAILED" | tee -a $LOG_FILE
         exit 1
     else
-        echo "$TIMESTAMP [INFO] installing $2....SUCCESS!!!" | tee -a $LOG_FILE
+        echo "$TIMESTAMP [INFO] installing $2....SUCCESS" | tee -a $LOG_FILE
     fi
 }
 
@@ -26,6 +26,6 @@ do
         dnf install $pack -y &>> $LOG_FILE
         FUNCTION pack $?
     else
-        echo "$TIMESTAMP [INFO] $pack is already installed.... SKIPPING!!!"
+        echo "$TIMESTAMP [INFO] $pack is already installed.... SKIPPING"
     fi
 done
