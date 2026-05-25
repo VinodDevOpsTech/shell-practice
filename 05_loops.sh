@@ -20,12 +20,12 @@ FUNCTION(){
 
 for pack in $@
 do
-    echo "installing $pack"
+    echo "$TIMESTAMP [INFO] installing $pack"
     dnf list installed $pack &>> $LOG_FILE
     if [ $? -ne 0 ]; then
         dnf install $pack -y &>> $LOG_FILE
         FUNCTION pack $?
     else
-        echo " $pack is already installed.... SKIPPING!!!"
+        echo "$TIMESTAMP [INFO] $pack is already installed.... SKIPPING!!!"
     fi
 done
