@@ -9,7 +9,7 @@ if [ $USERID -ne 0 ]; then
 fi
 
 FUNCTION(){
-    if [ $1 -ne 0 ]; then
+    if [ $2 -ne 0 ]; then
         echo "installing $2....FAILED"
         exit 1
     else
@@ -20,5 +20,8 @@ FUNCTION(){
 for pack in $@
 do
     echo "installing $pack"
-
+    dnf installing $pack &>> LOG_FILE
+    if [ $? -ne 0 ]; then
+        dnf install $pack -y &>> LOG_FILE
+        FUNCTION pack $?
 done    
