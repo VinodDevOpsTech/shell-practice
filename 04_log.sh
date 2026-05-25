@@ -9,8 +9,6 @@ LOG_FILE=$LOG_DIR/$0.log
 if [ $USERID -ne 0 ]; then
     echo "ERROR: please run this in root user"
     exit 1
-else
-    echo "USER:"
 fi
 
 #first arg -> What are you trying to install
