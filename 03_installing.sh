@@ -10,7 +10,7 @@ else
 fi
 
 echo "installing mySQL"
-dnf install mysqlfghj -y
+dnf install mysql -y
 
 if [ $? -ne 0 ]; then
     echo "installing mySQL....FAILED"
@@ -18,4 +18,4 @@ if [ $? -ne 0 ]; then
 
 else
     echo "installing mySQL....."
-fi        
+fi
