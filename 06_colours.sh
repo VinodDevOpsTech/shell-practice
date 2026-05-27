@@ -1,7 +1,7 @@
 USERID=$(id -u)
 
-LOG_DIR=/var/log/shell-script
-LOG_FILE=$LOG_DIR/$(basename $0).log
+LOG_DIR="/var/log/shell-script"
+LOG_FILE="$LOG_DIR/$0.log"
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 R="\e[31m"
 G="\e[32m"
